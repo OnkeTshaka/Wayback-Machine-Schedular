@@ -11,5 +11,5 @@ def save_page_now(url):
 
 if __name__ == "__main__":
   #Replace with the URL you want to archive
-  url= "https://kworb.net/spotify/artist/3SozjO3Lat463tQICI9LcE_songs.html"
+  url= ""
   save_page_now(url)
