@@ -1,4 +1,6 @@
 import requests
+import schedule
+import time
 
 def save_page_now(url):
   save_url = "https://web.archive.org/save/"
@@ -9,7 +11,22 @@ def save_page_now(url):
   else:
     print(f"Failed to save {url}. Status code: {response.status_code}")
 
-if __name__ == "__main__":
+def job():
   #Replace with the URL you want to archive
-  url= ""
+  url="https://kworb.net/spotify/artist/3SozjO3Lat463tQICI9LcE_songs.html"
   save_page_now(url)
+
+  schedule.every().day.at("19:10").do(job)
+
+  print("Scheduler started.Press Ctrl+C to stop")
+  try:
+    while True:
+      schedule.run_pending()
+      time.sleep(1)
+  except:
+    print("Scheduler stopped")
+
+
+
+
+
