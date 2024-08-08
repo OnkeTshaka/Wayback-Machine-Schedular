@@ -1,13 +1,17 @@
+
 import requests
 
 def save_to_wayback(url):
     save_url = "https://web.archive.org/save/"
-    response = requests.get(save_url + url)
-
-    if response.status_code == 200:
-        print(f"Successfully saved {url} to the Wayback Machine Archive")
-    else:
-        print(f"Failed to save {url}. Status code: {response.status_code}")
+    
+    while True:
+        response = requests.get(save_url + url)
+        
+        if response.status_code == 200:
+            print(f"Successfully saved {url} to the Wayback Machine Archive")
+            break
+        else:
+            print(f"Failed to save {url}. Status code: {response.status_code}. Retrying...")
 
 if __name__ == "__main__":
     # Replace with the URLs you want to archive
@@ -20,3 +24,5 @@ if __name__ == "__main__":
     for url in urls:
         save_to_wayback(url)
 
+
+'''This code will continuously attempt to save the URL to the Wayback Machine until it receives a status code of 200, indicating a successful save.'''
