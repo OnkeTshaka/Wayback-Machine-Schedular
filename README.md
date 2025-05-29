@@ -28,7 +28,7 @@ py -m venv .venv
 **Install request packages**
 
 ```
-pip install waybackpy requests
+pip install -r requirements.txt
 ```
 
 **Run program**
