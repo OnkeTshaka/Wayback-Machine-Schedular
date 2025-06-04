@@ -1,6 +1,6 @@
 # Wayback Machine Bulk Saver
 
-## Python program that saves lists of webpages to the Internet Archive's Wayback machine. Perfect for preserving web content systematically.
+## Python program that automates saving multiple web pages to the Internet Archive instead of doing it manually one-by-one. It prevents valuable web content from being lost when websites go offline or get updated.
 
 ## Key Features
 
